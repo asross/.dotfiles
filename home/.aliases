@@ -6,6 +6,7 @@ alias pgstop='pg_ctl -D /usr/local/var/postgres stop -m fast'
 alias gru='git remote update'
 alias grup='git remote update origin -p'
 alias grue='git remote update origin'
+alias grom='git rebase origin/master'
 alias gitx-reflog='gitx --all `git reflog | cut -c1-7`'
 
 # ruby-related
