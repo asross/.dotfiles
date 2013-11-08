@@ -20,7 +20,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-fugitive'
 Bundle 'mileszs/ack.vim'
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'nanotech/jellybeans.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
 Bundle 'elzr/vim-json'
@@ -54,7 +54,7 @@ set tabstop=2
 " themes / colors
 set term=xterm-256color
 set background=dark
-colorscheme solarized
+colorscheme jellybeans
 
 nnoremap <leader>sc :set spell!<CR>
 nnoremap <leader>hs :set hls!<CR>
