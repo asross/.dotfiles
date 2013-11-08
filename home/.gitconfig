@@ -1,18 +1,12 @@
 [user]
-  name = Brian Kaney
-  email = brian@vermonster.com
+  name = Andrew Ross
+  email = andrew@vermonster.com
 [alias]
   st = status
   br = branch
   ci = commit
   co = checkout
-	lg = log --all --branches --color --graph --pretty=format:'%C(red)%h%Creset -%C(white)%d%Creset %s %C(green)(%cr) %C(reset)<%an>%Creset' --abbrev-commit --date=relative
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  lg = log --graph --oneline --all --decorate
 [diff]
   algorithm=patience
 [color "diff"]
