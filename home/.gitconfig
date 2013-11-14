@@ -24,3 +24,5 @@
   remote = green
 [color]
   ui = auto
+[core]
+	editor = vim
