@@ -9,5 +9,21 @@ alias grue='git remote update origin'
 alias grom='git rebase origin/master'
 alias gitx-reflog='gitx --all `git reflog | cut -c1-7`'
 
+function groc { # git rebase origin/{current} -- courtesy of Joe Fredett!
+  local remote_branch="${1:-origin}/$(git branch | grep \* | cut -c 3-)"
+  if git branch -a | grep remotes/$remote_branch &>/dev/null ; then
+    git rebase $remote_branch
+    return 0
+  else
+    echo "STFU, you ain't got dat branch, son."
+    return 1
+  fi
+}
+
+function gpoc { # git push origin {current}
+  local current_branch="$(git branch | grep \* | cut -c 3-)"
+  git push origin $current_branch
+}
+
 # ruby-related
 alias b='bundle exec'
