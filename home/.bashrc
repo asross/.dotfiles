@@ -20,6 +20,7 @@ export RED='0;31m'
 export PURPLE='0;35m'
 export BROWN='0;33m'
 
+source ~/.git-completion.bash
 source ~/.git-prompt.sh
 PS1="¶\[\e[1m\]\$(__git_ps1)\[\e[m\] \[\e[$BROWN\]\w\[\e[m\] "
 
