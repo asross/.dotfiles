@@ -24,6 +24,7 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
 Bundle 'elzr/vim-json'
+Bundle 'flazz/vim-colorschemes'
 let g:vim_json_syntax_conceal = 0
 
 Bundle 'groenewege/vim-less'
@@ -51,16 +52,27 @@ set smarttab
 set shiftwidth=2
 set tabstop=2
 
+" tab completion
+set wildmode=list:longest,list:full
+set complete=.,w,t
+
 " themes / colors
-set term=xterm-256color
+"set term=xterm-256color
+set term=screen-256color
 set background=dark
-colorscheme jellybeans
+colorscheme fine_blue
+" colorscheme jellybeans
+" colorscheme macvim
 
 nnoremap <leader>sc :set spell!<CR>
 nnoremap <leader>hs :set hls!<CR>
 
 " statusline:
 set laststatus=2
+
+" make splits more natural
+set splitbelow
+set splitright
 
 " cf the default statusline: %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 " format markers:
@@ -95,18 +107,6 @@ set backupskip=/tmp/*,/private/tmp/*
 " File mutations
 
 match ErrorMsg '\s\+$'
-
-" Removes trailing spaces
-function! TrimWhiteSpace()
-  %s/\s\+$//e
-endfunction
-nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
-
-autocmd FileWritePre    * :call TrimWhiteSpace()
-autocmd FileAppendPre   * :call TrimWhiteSpace()
-autocmd FilterWritePre  * :call TrimWhiteSpace()
-autocmd BufWritePre     * :call TrimWhiteSpace()
-
 
 " ----------------------------
 " File types

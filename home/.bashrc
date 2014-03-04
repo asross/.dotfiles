@@ -1,6 +1,9 @@
 PATH="/usr/local/heroku/bin:$PATH"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# VIM
+export EDITOR=vim
+
 # aliases
 if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"

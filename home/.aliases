@@ -7,17 +7,12 @@ alias gru='git remote update'
 alias grup='git remote update origin -p'
 alias grue='git remote update origin'
 alias grom='git rebase origin/master'
+alias glog='git log --graph --oneline --all --decorate'
 alias gitx-reflog='gitx --all `git reflog | cut -c1-7`'
 
-function groc { # git rebase origin/{current} -- courtesy of Joe Fredett!
+function groc { # git rebase origin/{current}
   local remote_branch="${1:-origin}/$(git branch | grep \* | cut -c 3-)"
-  if git branch -a | grep remotes/$remote_branch &>/dev/null ; then
-    git rebase $remote_branch
-    return 0
-  else
-    echo "STFU, you ain't got dat branch, son."
-    return 1
-  fi
+  git rebase $remote_branch
 }
 
 function gpoc { # git push origin {current}
@@ -27,3 +22,36 @@ function gpoc { # git push origin {current}
 
 # ruby-related
 alias b='bundle exec'
+alias bf='bundle exec foreman run'
+
+## replace all instances of $1 with $2 within $3. uncomment with care.
+#function supersub {
+  #ack -l "$1" "$3" | xargs perl -p -i -e "s/$1/$2/g"
+#}
+
+function supersay {
+  say -v 'Agnes' $1 &
+  say -v 'Albert' $1 &
+  say -v 'Alex' $1 &
+  say -v 'Bad News' $1 &
+  say -v 'Bahh' $1 &
+  say -v 'Bells' $1 &
+  say -v 'Boing' $1 &
+  say -v 'Bruce' $1 &
+  say -v 'Bubbles' $1 &
+  say -v 'Cellos' $1 &
+  say -v 'Deranged' $1 &
+  say -v 'Fred' $1 &
+  say -v 'Good News' $1 &
+  say -v 'Hysterical' $1 &
+  say -v 'Junior' $1 &
+  say -v 'Kathy' $1 &
+  say -v 'Pipe Organ' $1 &
+  say -v 'Princess' $1 &
+  say -v 'Ralph' $1 &
+  say -v 'Trinoids' $1 &
+  say -v 'Vicki' $1 &
+  say -v 'Victoria' $1 &
+  say -v 'Whisper' $1 &
+  say -v 'Zarvox' $1
+}
