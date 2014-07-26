@@ -31,11 +31,14 @@ Bundle 'groenewege/vim-less'
 Bundle 'nono/vim-handlebars'
 Bundle 'sjl/gundo.vim'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'darthdeus/vim-emblem'
 nnoremap <F5> :GundoToggle<CR>
 
 
 " ---------------------------
 " config
+"
+let NERDTreeIgnore=['\.meta$']
 
 syntax on
 filetype plugin indent on
@@ -59,10 +62,19 @@ set complete=.,w,t
 " themes / colors
 "set term=xterm-256color
 set term=screen-256color
-set background=dark
-colorscheme fine_blue
-" colorscheme jellybeans
+"set background=dark
+"colorscheme fine_blue
+"colorscheme jellybeans
+if has('gui_running')
+  set background=light
+  colorscheme solarized
+else
+  set background=dark
+  colorscheme jellybeans
+endif
 " colorscheme macvim
+
+set guifont=Menlo:h16
 
 nnoremap <leader>sc :set spell!<CR>
 nnoremap <leader>hs :set hls!<CR>
