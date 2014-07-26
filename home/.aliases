@@ -30,6 +30,11 @@ function gpoc { # git push origin {current}
 alias b='bundle exec'
 alias bf='bundle exec foreman run'
 
+function kill_matching {
+  export matchee=$1
+  ruby -e 'puts `ps aux | grep #{`echo $matchee`}`.split("\n").each{|l| `kill -9 #{l.split[1]}` unless l.include?("grep") }'
+}
+
 ## replace all instances of $1 with $2 within $3. uncomment with care.
 function supersub {
   ack -l "$1" "$3" | xargs perl -p -i -e "s/$1/$2/g"
