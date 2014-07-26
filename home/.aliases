@@ -2,6 +2,12 @@
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -m fast'
 
+# elasticsearch
+alias elasticstart='elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml'
+
+# memcached
+alias memcachedstart='/usr/local/opt/memcached/bin/memcached'
+
 # git
 alias gru='git remote update'
 alias grup='git remote update origin -p'
