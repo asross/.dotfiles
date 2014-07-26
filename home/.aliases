@@ -31,9 +31,9 @@ alias b='bundle exec'
 alias bf='bundle exec foreman run'
 
 ## replace all instances of $1 with $2 within $3. uncomment with care.
-#function supersub {
-  #ack -l "$1" "$3" | xargs perl -p -i -e "s/$1/$2/g"
-#}
+function supersub {
+  ack -l "$1" "$3" | xargs perl -p -i -e "s/$1/$2/g"
+}
 
 function supersay {
   say -v 'Agnes' $1 &
